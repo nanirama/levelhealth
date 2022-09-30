@@ -1,0 +1,28 @@
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+@font-face {
+	font-family: 'TTHovesMedium';
+	src: url('../assets/fonts/TTHovesMedium.eot');
+	src: url('../assets/fonts/TTHovesMedium.eot') format('embedded-opentype'), url('../assets/fonts/TTHovesMedium.woff2') format('woff2'), url('../assets/fonts/TTHovesMedium.woff') format('woff'), url('../assets/fonts/TTHovesMedium.ttf') format('truetype'), url('../assets/fonts/TTHovesMedium.svg#TTHovesMedium') format('svg');
+}
+@font-face {
+    font-family: 'TTHovesBold';
+    src: url('../assets/fonts/TTHovesBold.eot');
+    src: url('../assets/fonts/TTHovesBold.eot') format('embedded-opentype'),
+         url('../assets/fonts/TTHovesBold.woff2') format('woff2'),
+         url('../assets/fonts/TTHovesBold.woff') format('woff'),
+         url('../assets/fonts/TTHovesBold.ttf') format('truetype'),
+         url('../assets/fonts/TTHovesBold.svg#TTHovesBold') format('svg');
+}
+
+
+body {
+    font-family: 'TTHovesMedium';
+}
+.bg-gradient {background: radial-gradient(100% 62.34% at 0% 37.66%, #FFFFFF 38.02%, #E6E6E6 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;}
+
+.ttfont-bold {  font-family: 'TTHovesBold';}
+.ltr-spacing {letter-spacing: 0.2em;}
+.slick-track{display: flex !important; justify-content: center; align-items: center;}
