@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import { Link } from 'gatsby'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -51,25 +51,25 @@ const CategoryListsection = () => {
         <div className="max-w-7xl mx-auto px-4">
             <Slider {...settings}>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing bg-green-900 rounded-full text-teal-300 hover:bg-green-900 hover:rounded-full">all</a>
+                    <Link to="/" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing bg-green-900 rounded-full text-teal-300 hover:bg-green-900 hover:rounded-full">all</Link>
                 </div>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">mental health</a>
+                    <Link to="/blog/category/mental-health" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">mental health</Link>
                 </div>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">metabolic basics</a>
+                    <Link to="/blog/category/metabolic-basics" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">metabolic basics</Link>
                 </div>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">nutrition</a>
+                    <Link to="/blog/category/nutrition" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">nutrition</Link>
                 </div>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">personal stories</a>
+                    <Link to="/blog/category/testimonials" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">personal stories</Link>
                 </div>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">physical fitness</a>
+                    <Link to="/blog/category/physical-fitness" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">weight loss</Link>
                 </div>
                 <div>
-                    <a href="#" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">ultimate guides</a>
+                    <Link to="/blog/category/weight-loss" className="flex items-center justify-center text-center text-xs uppercase ttfont-bold text-gray-400 ltr-spacing py-2.5 px-5 ltr-spacing hover:text-teal-300 hover:bg-green-900 hover:rounded-full">woman's health</Link>
                 </div>
             </Slider>
         </div>

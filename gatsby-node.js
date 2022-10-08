@@ -16,6 +16,19 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            allWpCategory {
+              edges {
+                node {
+                  id
+                  slug
+                  posts {
+                    nodes {
+                      id
+                    }
+                  }
+                }
+              }
+            }
            
         }      
     `).then((result) => {
@@ -33,6 +46,26 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         })
       })
+
+      const postsPerPage = 14
+      _l.each(result.data.allWpCategory.edges, (edge) => {
+        let posts = edge.node.posts.nodes
+        let numPages = Math.ceil(posts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/blog/category/${edge.node.slug}` : `/blog/category/${edge.node.slug}/${i + 1}`,
+            component: path.resolve("./src/templates/blog-category-template.js"),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+              id: edge.node.id
+            },
+            })
+          })
+        })
+
       resolve();
     });
   })

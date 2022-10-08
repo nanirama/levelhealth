@@ -1,3 +1,9 @@
+const path = require('path');
+
+require('dotenv').config({
+  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
+});
+
 module.exports = {
   siteMetadata: {
     title: `Levels Blog: Ultimate Source for Metabolic Health Information and Advice`,
@@ -48,15 +54,19 @@ module.exports = {
         schema: {
           requestConcurrency: 50,
           queryDepth: 5,
-          perPage: 100,
+          perPage: 10,
           timeout: 36000000,
+        },
+        html: {
+          useGatsbyImage: true,
+          createStaticFiles: true,
         },
         debug: {
           timeBuildSteps: true,
         },
         type: {
           __all: {
-            limit: 10,
+            limit: process.env.NODE_ENV === 'development' ? 6 : 5000,
           },
           Page: {
             exclude: true,
@@ -71,11 +81,18 @@ module.exports = {
             exclude: true,
           },
           Tag: {
-            exclude: true,
+            limit: 1050,
+          },
+          Category: {
+            limit: 40,
+          },
+          User: {
+            limit: 250,
           },
           MediaItem: {
             localFile: {
-              requestConcurrency: 500,
+              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 5000,
+              maxFileSizeBytes: 10485760,
             },
           },
         },
