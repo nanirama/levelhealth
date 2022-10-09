@@ -50,7 +50,8 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://www.levelshealth.com/graphql`,     
+        url: `https://www.levelshealth.com/graphql`,        
+        hostingWPCOM: false, 
         production: {
           allow404Images: false
         },    
@@ -61,7 +62,7 @@ module.exports = {
           timeout: 36000000,
         },
         html: {
-          useGatsbyImage: true,
+          useGatsbyImage: false,
           createStaticFiles: true,
         },
         debug: {
