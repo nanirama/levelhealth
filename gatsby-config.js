@@ -52,7 +52,7 @@ module.exports = {
       options: {
         url: `https://www.levelshealth.com/graphql`,     
         production: {
-          allow404Images: true
+          allow404Images: false
         },    
         schema: {
           requestConcurrency: 50,
@@ -69,7 +69,7 @@ module.exports = {
         },
         type: {
           __all: {
-            limit: process.env.NODE_ENV === 'development' ? 6 : 100,
+            limit: process.env.NODE_ENV === 'development' ? 6 : 6,
           },
           Page: {
             exclude: true,
@@ -94,7 +94,7 @@ module.exports = {
           },
           MediaItem: {
             localFile: {
-              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 50,
+              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 5,
               maxFileSizeBytes: 5485760,
             },
           },
