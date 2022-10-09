@@ -50,7 +50,10 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://www.levelshealth.com/graphql`,         
+        url: `https://www.levelshealth.com/graphql`,     
+        production: {
+          allow404Images: true
+        },    
         schema: {
           requestConcurrency: 50,
           queryDepth: 5,
@@ -66,7 +69,7 @@ module.exports = {
         },
         type: {
           __all: {
-            limit: process.env.NODE_ENV === 'development' ? 6 : 5000,
+            limit: process.env.NODE_ENV === 'development' ? 6 : 100,
           },
           Page: {
             exclude: true,
@@ -81,18 +84,18 @@ module.exports = {
             exclude: true,
           },
           Tag: {
-            limit: 1050,
+            limit: 250,
           },
           Category: {
-            limit: 40,
+            limit: 20,
           },
           User: {
-            limit: 250,
+            limit: 150,
           },
           MediaItem: {
             localFile: {
-              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 5000,
-              maxFileSizeBytes: 10485760,
+              requestConcurrency: process.env.NODE_ENV === 'development' ? 5 : 50,
+              maxFileSizeBytes: 5485760,
             },
           },
         },
